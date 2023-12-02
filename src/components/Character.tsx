@@ -1,11 +1,11 @@
 import React from "react";
-import useSwapi from "../useSwapi";
+import useSwapi from "../state/useSwapi";
 
 function Character() {
 	const { character, setRefetch, loading } = useSwapi();
 
 	return (
-		<div>
+		<section>
 			<button onClick={() => setRefetch((prev) => !prev)}>Refetch</button>
 			<br />
 			{loading ? (
@@ -13,7 +13,7 @@ function Character() {
 			) : (
 				character && <h1>{character.name}</h1>
 			)}
-		</div>
+		</section>
 	);
 }
 

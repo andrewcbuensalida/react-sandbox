@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CharacterType } from "./types";
+import { CharacterType } from "../types";
 
 function useSwapi() {
 	const [character, setCharacter] = useState<null | CharacterType>(null);

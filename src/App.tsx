@@ -2,6 +2,7 @@ import "./App.css";
 import { useContext } from "react";
 import { ThemeContext } from "./state/ThemeContextProvider";
 import { ThemeContextType } from "./types";
+import Character from "./components/Character";
 
 function App() {
 	const { theme, setTheme } = useContext(ThemeContext) as ThemeContextType;
@@ -17,6 +18,7 @@ function App() {
 	return (
 		<div className={`App theme-${theme}`}>
 			<button onClick={handleChangeTheme}>Change theme</button>
+      <Character/>
 		</div>
 	);
 }

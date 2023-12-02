@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { CharacterType } from "./types";
 
 function useSwapi() {
-	const [character, setCharacter] = useState(null);
+	const [character, setCharacter] = useState<null | CharacterType>(null);
 	const [refetch, setRefetch] = useState(true);
 	const [loading, setLoading] = useState(true);
 

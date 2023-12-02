@@ -1,25 +1,21 @@
 import "./App.css";
-import { useContext } from "react";
+import { useCallback, useContext, useState } from "react";
 import { ThemeContext } from "./state/ThemeContextProvider";
 import Character from "./components/Character";
 import Starships from "./components/Starships";
+import MyCallback from "./components/MyCallback";
 
 function App() {
-	const { theme, setTheme } = useContext(ThemeContext);
+	const { theme, handleChangeTheme } = useContext(ThemeContext);
 
-	function handleChangeTheme() {
-		if (theme === "light") {
-			setTheme("dark");
-		} else {
-			setTheme("light");
-		}
-	}
-
+	console.log("In app");
 	return (
 		<div className={`App theme-${theme}`}>
-			<button onClick={handleChangeTheme}>Change theme</button>
+			<button onClick={() => handleChangeTheme()}>Change theme</button>
+
 			<Character />
 			<Starships />
+			<MyCallback />
 		</div>
 	);
 }

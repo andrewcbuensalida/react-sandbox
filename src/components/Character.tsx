@@ -3,6 +3,7 @@ import useSwapi from "../state/useSwapi";
 
 function Character() {
 	const { character, setRefetch, loading } = useSwapi();
+	console.log("in character");
 
 	return (
 		<section>

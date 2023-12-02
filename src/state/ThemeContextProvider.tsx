@@ -6,14 +6,21 @@ import {
 
 export const ThemeContext = createContext({
 	theme: "light",
-	setTheme: (theme: string) => {},
+	handleChangeTheme: () => {},
 });
 
 function ThemeContextProvider({ children }: PropsWithChildren) {
 	const [theme, setTheme] = useState("light");
 
+	function handleChangeTheme() {
+		if (theme === "light") {
+			setTheme("dark");
+		} else {
+			setTheme("light");
+		}
+	}
 	return (
-		<ThemeContext.Provider value={{ theme, setTheme }}>
+		<ThemeContext.Provider value={{ theme, handleChangeTheme }}>
 			{children}
 		</ThemeContext.Provider>
 	);

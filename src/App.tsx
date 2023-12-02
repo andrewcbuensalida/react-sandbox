@@ -1,12 +1,11 @@
 import "./App.css";
 import { useContext } from "react";
 import { ThemeContext } from "./state/ThemeContextProvider";
-import { ThemeContextType } from "./types";
 import Character from "./components/Character";
 import Starships from "./components/Starships";
 
 function App() {
-	const { theme, setTheme } = useContext(ThemeContext) as ThemeContextType;
+	const { theme, setTheme } = useContext(ThemeContext);
 
 	function handleChangeTheme() {
 		if (theme === "light") {
@@ -19,8 +18,8 @@ function App() {
 	return (
 		<div className={`App theme-${theme}`}>
 			<button onClick={handleChangeTheme}>Change theme</button>
-      <Character/>
-      <Starships/>
+			<Character />
+			<Starships />
 		</div>
 	);
 }

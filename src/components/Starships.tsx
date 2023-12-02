@@ -1,4 +1,3 @@
-import React from "react";
 import useStarshipsState from "../state/useStarshipsState";
 import { StarshipType } from "../types";
 

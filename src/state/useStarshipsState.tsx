@@ -32,6 +32,8 @@ function starshipReducer(state: StarshipState, action: StarshipAction) {
 				...state,
 				loading: true,
 			};
+		default:
+			throw new Error();
 	}
 }
 

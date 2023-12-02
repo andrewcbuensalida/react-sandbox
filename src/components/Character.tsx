@@ -9,7 +9,7 @@ function Character() {
 			<button onClick={() => setRefetch((prev) => !prev)}>Refetch</button>
 			<br />
 			{loading ? (
-				<h1>Loading....</h1>
+				<h1>Loading character....</h1>
 			) : (
 				character && <h1>{character.name}</h1>
 			)}

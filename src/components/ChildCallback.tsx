@@ -1,14 +1,28 @@
-import React, { memo } from "react";
+import React, { memo, useEffect, useState } from "react";
 
 type ChildCallbackPropsType = {
 	myCallback: () => void;
 };
 
 function ChildCallback({ myCallback }: ChildCallbackPropsType) {
+	const [message, setMessage] = useState("Loading child..");
 	console.log("in childcallback");
+
+  // simulates a long api call
+	useEffect(() => {
+		console.log("in useeffect");
+		setMessage("Loading child.....");
+		setTimeout(() => {
+			setMessage("Done loading child");
+		}, 3000);
+	}, [myCallback]);
+
+	// setTimeout(() => {
+
+	// }, 3000);
 	return (
 		<div>
-			<h1>ChildCallback</h1>
+			<h1>{message}</h1>
 		</div>
 	);
 }

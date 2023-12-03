@@ -4,18 +4,21 @@ import { ThemeContext } from "./state/ThemeContextProvider";
 import Character from "./components/Character";
 import Starships from "./components/Starships";
 import MyCallback from "./components/MyCallback";
+import MyRef from "./components/MyRef";
 
 function App() {
 	const { theme, handleChangeTheme } = useContext(ThemeContext);
 
 	console.log("In app");
 	return (
-		<div className={`App theme-${theme}`}>
+		<div style={{textAlign:'center'}}>
 			<button onClick={() => handleChangeTheme()}>Change theme</button>
-
-			<Character />
-			<Starships />
-			<MyCallback />
+			<div className={`App theme-${theme}`}>
+				<MyRef />
+				<Character />
+				<Starships />
+				<MyCallback />
+			</div>
 		</div>
 	);
 }

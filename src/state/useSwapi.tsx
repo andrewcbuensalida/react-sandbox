@@ -8,6 +8,7 @@ const [useRefetch]:any = createGalactic(true)
 const [useLoading]:any = createGalactic(true)
 
 function useSwapi() {
+  // shouldn't use useState because it won't be shared state
 	const [character, setCharacter] = useCharacter();
 	const [refetch, setRefetch] = useRefetch();
 	const [loading, setLoading] = useLoading();

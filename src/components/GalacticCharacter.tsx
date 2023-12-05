@@ -5,7 +5,7 @@ import useSwapi from '../state/useSwapi';
 function ReduxComp() {
 	const { character, setRefetch, loading } = useSwapi();
   return (
-		<div>
+		<section>
 			Character again{" "}
 			<button onClick={() => setRefetch((prev:any) => !prev)}>Refetch</button>
 			<br />
@@ -14,7 +14,7 @@ function ReduxComp() {
 			) : (
 				character && <h1>{character.name}</h1>
 			)}
-		</div>
+		</section>
   );
 }
 

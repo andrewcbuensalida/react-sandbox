@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { CharacterType } from "../types";
 
+import { createGalactic } from "galactic-state";
+
+const [useCharacter]:any = createGalactic({})
+const [useRefetch]:any = createGalactic(true)
+const [useLoading]:any = createGalactic(true)
+
 function useSwapi() {
-	const [character, setCharacter] = useState<null | CharacterType>(null);
-	const [refetch, setRefetch] = useState(true);
-	const [loading, setLoading] = useState(true);
+	const [character, setCharacter] = useCharacter();
+	const [refetch, setRefetch] = useRefetch();
+	const [loading, setLoading] = useLoading();
 
 	useEffect(() => {
 		async function fetchCharacter() {

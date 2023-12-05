@@ -1,12 +1,12 @@
-import React from "react";
-import useSwapi from "../state/useSwapi";
+import React from 'react'
+import useStarshipsState from '../state/useStarshipsState';
+import useSwapi from '../state/useSwapi';
 
-function Character() {
+function ReduxComp() {
 	const { character, setRefetch, loading } = useSwapi();
-	console.log("in character");
-
-	return (
-		<section>
+  return (
+		<div>
+			Character again{" "}
 			<button onClick={() => setRefetch((prev:any) => !prev)}>Refetch</button>
 			<br />
 			{loading ? (
@@ -14,8 +14,8 @@ function Character() {
 			) : (
 				character && <h1>{character.name}</h1>
 			)}
-		</section>
-	);
+		</div>
+  );
 }
 
-export default Character;
+export default ReduxComp

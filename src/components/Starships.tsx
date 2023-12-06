@@ -4,7 +4,7 @@ import { StarshipType } from "../types";
 function Starships() {
 	const { state, dispatch } = useStarshipsState();
 	const { starships, loading } = state;
-	console.log("in starships");
+	// console.log("in starships");
 	return (
 		<section>
 			<button onClick={() => dispatch({ type: "FETCH_LOADING" })}>

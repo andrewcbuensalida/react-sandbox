@@ -2,9 +2,9 @@ import React, { memo, useCallback } from "react";
 import ChildCallback from "./ChildCallback";
 
 function MyCallback() {
-	console.log("in callback");
+	// console.log("in callback");
 
-	// this rerenders the ChildCallback
+	// this rerenders the ChildCallback when theme is changed
 	// const myCallback = () => {
 	// 	console.log("in inner callback");
 	// };

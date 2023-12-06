@@ -1,8 +1,11 @@
 import React, { useRef, useState } from "react";
 
-function MyRef() {
+function MyRef({theme}:any) {
 	const [name, setName] = useState("");
 	const inputRef = useRef<HTMLInputElement>(null);
+
+  // console.log('in my ref');
+  
 	return (
 		<section>
 			<button
@@ -16,6 +19,7 @@ function MyRef() {
 				value={name}
 				onChange={(e) => setName(e.target.value)}
 			/>
+      Current theme is {theme}
 		</section>
 	);
 }

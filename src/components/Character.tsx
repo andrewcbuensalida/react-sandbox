@@ -2,15 +2,17 @@ import React from "react";
 import useSwapi from "../state/useSwapi";
 
 function Character() {
-	const { character, setRefetch, loading } = useSwapi();
+	const { character, refetch, error, loading } = useSwapi();
 	console.log("in character");
 
 	return (
 		<section>
-			<button onClick={() => setRefetch((prev:any) => !prev)}>Refetch</button>
+			<button onClick={() => refetch()}>Refetch</button>
 			<br />
 			{loading ? (
 				<h1>Loading character....</h1>
+			) : error ? (
+				<h1>There was an error</h1>
 			) : (
 				character && <h1>{character.name}</h1>
 			)}

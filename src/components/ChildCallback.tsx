@@ -6,11 +6,11 @@ type ChildCallbackPropsType = {
 
 function ChildCallback({ myCallback }: ChildCallbackPropsType) {
 	const [message, setMessage] = useState("Loading child..");
-	console.log("in childcallback");
+	// console.log("in childcallback");
 
   // simulates a long api call
 	useEffect(() => {
-		console.log("in useeffect");
+		// console.log("in useeffect in child callback");
 		setMessage("Loading child.....");
 		setTimeout(() => {
 			setMessage("Done loading child");

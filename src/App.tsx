@@ -15,9 +15,9 @@ function App() {
 		<div style={{ textAlign: "center" }}>
 			<button onClick={() => handleChangeTheme()}>Change theme</button>
 			<div className={`App theme-${theme}`}>
-				<MyRef />
+				<MyRef theme={theme}/>
 				<Character />
-				<GalacticCharacter />
+				{/* <GalacticCharacter /> */}
 				<Starships />
 				<MyCallback />
 			</div>

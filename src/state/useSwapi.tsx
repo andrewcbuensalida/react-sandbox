@@ -3,38 +3,50 @@ import { CharacterType } from "../types";
 
 import { createGalactic } from "galactic-state";
 
-const [useCharacter]:any = createGalactic({})
-const [useRefetch]:any = createGalactic(true)
-const [useLoading]:any = createGalactic(true)
+const [useCharacter]: any = createGalactic({});
+const [useError]: any = createGalactic(null);
+const [useLoading]: any = createGalactic(false);
 
 function useSwapi() {
-  // shouldn't use useState because it won't be shared state
+	// shouldn't use useState because it won't be shared state
 	const [character, setCharacter] = useCharacter();
-	const [refetch, setRefetch] = useRefetch();
+	const [error, setError] = useError();
 	const [loading, setLoading] = useLoading();
+	console.log("in useswapi");
 
-	useEffect(() => {
-		async function fetchCharacter() {
+	async function fetchCharacter() {
+		setLoading(true);
+		console.log("after setloading true");
+		try {
 			const response = await fetch(
 				`https://swapi.dev/api/people/${Math.floor(
 					Math.random() * 100
 				)}`
 			);
 			const responseJson = await response.json();
+			console.log("after fetch");
 			setCharacter(responseJson);
-			setRefetch(false);
+			setError(null);
+			console.log("after set character");
+		} catch (error) {
+			setError(error);
+		} finally {
 			setLoading(false);
 		}
-		if (refetch) {
-			setLoading(true);
-			fetchCharacter();
-		}
-		return () => {
-			return;
-		};
-	}, [refetch]);
+	}
 
-	return { character, setRefetch, loading };
+	useEffect(() => {
+		console.log("in useeffect in useswapi");
+		fetchCharacter();
+	}, []);
+
+	function refetch() {
+		console.log("in refetch");
+
+		fetchCharacter();
+	}
+
+	return { character, refetch, error, loading };
 }
 
 export default useSwapi;

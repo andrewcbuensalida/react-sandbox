@@ -8,7 +8,7 @@ const [useError]: any = createGalactic(null);
 const [useLoading]: any = createGalactic(false);
 
 function useSwapi() {
-	// shouldn't use useState because it won't be shared state
+	// shouldn't use useState because it won't be shared state, unless that's what you want
 	const [character, setCharacter] = useCharacter();
 	const [error, setError] = useError();
 	const [loading, setLoading] = useLoading();

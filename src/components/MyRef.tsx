@@ -4,7 +4,7 @@ function MyRef({theme}:any) {
 	const [name, setName] = useState("");
 	const inputRef = useRef<HTMLInputElement>(null);
 
-  // console.log('in my ref');
+  console.log('in my ref');
   
 	return (
 		<section>

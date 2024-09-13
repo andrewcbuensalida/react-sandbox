@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ThemeContextProvider from "./state/ThemeContextProvider";
+import NotApp from "./NotApp";
 
 const root = ReactDOM.createRoot(
 	document.getElementById("root") as HTMLElement
@@ -11,6 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
 	// <React.StrictMode>
 		<ThemeContextProvider>
+      <NotApp/>
 			<App />
 		</ThemeContextProvider>
 	// </React.StrictMode>

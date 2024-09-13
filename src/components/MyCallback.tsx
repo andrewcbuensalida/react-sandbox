@@ -1,7 +1,7 @@
 import React, { memo, useCallback } from "react";
 import ChildCallback from "./ChildCallback";
 
-function MyCallback() {
+function MyCallback({children}:any) {
 	// console.log("in callback");
 
 	// this rerenders the ChildCallback when theme is changed
@@ -18,6 +18,7 @@ function MyCallback() {
 		<section>
 			<h1>in callback</h1>
 			<ChildCallback myCallback={myCallback} />
+      {children}
 		</section>
 	);
 }

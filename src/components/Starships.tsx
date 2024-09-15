@@ -6,7 +6,7 @@ function Starships() {
 	const { starships, loading } = state;
 	// console.log("in starships");
 	return (
-		<section>
+		<section>STARSHIPS no context
 			<button onClick={() => dispatch({ type: "FETCH_LOADING" })}>
 				Refetch
 			</button>

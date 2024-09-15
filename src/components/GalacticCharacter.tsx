@@ -1,5 +1,3 @@
-import React from "react";
-import useStarshipsState from "../state/useStarshipsState";
 import useSwapi from "../state/useSwapi";
 
 function GalacticCharacter() {

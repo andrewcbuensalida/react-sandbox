@@ -1,8 +1,6 @@
 import React, { useEffect, useReducer } from "react";
 import { StarshipType } from "../types";
 
-
-
 type StarshipAction =
 	| { type: "FETCH_SUCCESS"; payload: StarshipType }
 	| { type: "FETCH_LOADING" };

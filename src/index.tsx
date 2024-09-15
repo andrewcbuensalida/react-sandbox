@@ -5,16 +5,19 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ThemeContextProvider from "./state/ThemeContextProvider";
 import NotApp from "./NotApp";
+import StarshipsContextProvider from "./state/StarshipsContextProvider";
 
 const root = ReactDOM.createRoot(
 	document.getElementById("root") as HTMLElement
 );
 root.render(
 	// <React.StrictMode>
+	<StarshipsContextProvider>
 		<ThemeContextProvider>
-      <NotApp/>
+			<NotApp />
 			<App />
 		</ThemeContextProvider>
+	</StarshipsContextProvider>
 	// </React.StrictMode>
 );
 

@@ -9,6 +9,7 @@ import Todo from "./components/Todo";
 import j from "./j.json";
 import StartshipsWithContext from "./components/StarshipsWithContext";
 import Starships from "./components/Starships";
+import Form from "./components/Form";
 
 function App() {
 	const { theme, handleChangeTheme } = useContext(ThemeContext);
@@ -19,6 +20,7 @@ function App() {
 		<div style={{ textAlign: "center" }}>
 			<button onClick={() => handleChangeTheme()}>Change theme</button>
 			<div className={`App theme-${theme}`}>
+        <Form/>
 				<MyRef theme={theme} />
         {/* Character and GalacticCharacter show the same character because they both use useSwapi which is a custom hook that uses galactic state */}
 				<Character />
